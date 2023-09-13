@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+    <title th:text="${usuario.nombre}" > </title>
+</head>
+<body>
+    <h1>Dash board de <span th:text="${usuario.nombre}" ></span></h1>
+    <p>El valor del atributo 1 es: <span th:text="${usuario.nombre}"></span></p>
+    <p>El valor del atributo 2 es: <span th:text="${usuario.email}"></span></p>
+    <p>El valor del atributo 2 es: <span th:text="${usuario.id}"></span></p>
+<form action="#" th:action="@{/sector}" method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+    <br>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" name="descripcion" id="descripcion" required>
+    <br>
+    <input type="hidden"  th:value="${usuario.id}" name="id_usuario">
+    <button type="submit">Crear Sector</button>
+</form>
+
+
+
+</body>
+</html>
